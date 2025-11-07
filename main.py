@@ -5,8 +5,6 @@ import h5py
 import random
 from sklearn.model_selection import train_test_split
 
-# This file creates the HDF5 file required for the assignment. It also prints the graphs with the moving average
-
 # Load all the CSV's
 # Jumping data
 matt_jump_BP = pd.read_csv("Matt/Jumping_Back_Pocket.csv")
@@ -312,7 +310,6 @@ for a in ax2:
 plt.tight_layout()
 
 #plt.show()
-'''
 
 # Map each dataset's name to the dataset
 datasets = {
@@ -469,7 +466,6 @@ with h5py.File('./hdf5_data.h5', 'w') as hdf:
         test_subgroup.create_dataset("z", data=z_test)
         test_subgroup.create_dataset("label", data=labels_test)
 
-        '''
         # Plot MA's (This plots so many graphs that an error occurs due to too many requests from the API
         # That's why the Y and Z are commented out, you can uncomment them to check the data
         # X plot
@@ -511,6 +507,7 @@ with h5py.File('./hdf5_data.h5', 'w') as hdf:
         plt.legend()
         plt.grid(True, alpha=0.7)
         plt.tight_layout()
-        plt.show() '''
+        plt.show()
+
 
 
